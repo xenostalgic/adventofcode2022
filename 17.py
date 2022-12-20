@@ -99,7 +99,7 @@ def run_sim(pattern, n_rocks):
 
 if __name__=="__main__":
     define_grids()
-    if len([ch for ch in sys.argv[1] if ch in "<>"]) == len(sys.argv[1]):
+    if len([ch for ch in sys.argv[1][:10] if ch in "<>"]) == 10:
         pattern = ["L" if ch=="<" else "R" for ch in sys.argv[1]]
     else:
         pattern = read_input(sys.argv[1])
