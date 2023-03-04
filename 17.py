@@ -95,7 +95,18 @@ def run_sim(pattern, n_rocks):
                 row = row - 1
             tick += 1
             rtick += 1
-    print("Max height:", max_row(board))
+    return max_row(board)
+    
+
+def q2(pattern):
+    n = len(pattern)
+    lcm = n if n % 5 == 0 else n*5
+    # k = run_sim(pattern, lcm)
+    # k2 = run_sim(pattern, lcm*2)
+    # if k2 == 2*k:
+    #     print("Found repeating pattern!!!!")
+    ipy.embed()
+    
 
 if __name__=="__main__":
     define_grids()
@@ -104,6 +115,7 @@ if __name__=="__main__":
     else:
         pattern = read_input(sys.argv[1])
     print("== Part 1 ==")
-    run_sim(pattern,2022)
-    # print("== Part 2 ==")
-    # run_sim(pattern,1000000000000)
+    n = run_sim(pattern,2022)
+    print("Max height:", n)
+    print("== Part 2 ==")
+    q2(pattern)
